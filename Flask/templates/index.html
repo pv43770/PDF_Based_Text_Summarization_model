@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navigation-container">
+        <h1>Welcome to the PDF Tool</h1>
+        <p>Please choose one of the following options:</p>
+
+        <div class="options-container">
+            <div class="option-card">
+                <a href="/summarization" class="nav-btn">
+                    <h2>Summarization</h2>
+                    <p>Generate summaries for your PDF documents</p>
+                </a>
+            </div>
+            <div class="option-card">
+                <a href="/pdf_content" class="nav-btn">
+                    <h2>View PDF Content</h2>
+                    <p>View the original content of your PDF files</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

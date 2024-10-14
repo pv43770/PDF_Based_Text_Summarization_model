@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Content</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/summarization_and_pdf_content.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Select a PDF for Original Content</h1>
+        <form id="pdfContentForm">
+            <label for="pdfDropdown">Choose a PDF:</label>
+            <select id="pdfDropdown" name="pdf_name" class="dropdown">
+                {% for pdf in pdf_list %}
+                    <option value="{{ pdf }}">{{ pdf }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="submit-btn">Get Content</button>
+        </form>
+
+        <div id="pdfContentResult" class="summary-box">
+            <!-- The original PDF content will be displayed here -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#pdfContentForm').on('submit', function(event){
+                event.preventDefault();
+                var selectedPdf = $('#pdfDropdown').val();
+
+                $.ajax({
+                    url: '/get_pdf_content',
+                    method: 'POST',
+                    data: { pdf_name: selectedPdf },
+                    success: function(response) {
+                        if(response.error) {
+                            $('#pdfContentResult').html('<p>' + response.error + '</p>');
+                        } else {
+                            $('#pdfContentResult').html('<h2>Content for ' + response.pdf_name + ':</h2>' +
+                            '<p><strong>File Size:</strong> ' + response.size + ' bytes</p>' +
+                            '<p><strong>Number of Pages:</strong> ' + response.num_pages + '</p>' +
+                            '<p><strong>Text:</strong> ' + response.text + '</p>');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

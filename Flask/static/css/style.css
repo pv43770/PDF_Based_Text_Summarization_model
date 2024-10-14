@@ -1,0 +1,116 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling */
+.navigation-container {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb); /* Gradient background */
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 60px auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+h1 {
+    color: #0d47a1; /* Darker blue text */
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #444;
+    font-size: 1.3em;
+    margin-bottom: 50px;
+}
+
+/* Option container styling */
+.options-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual option card styling */
+.option-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    width: 280px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.option-card:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #90caf9;
+    transform: rotate(45deg);
+    transition: transform 0.5s ease;
+    z-index: 0;
+}
+
+.option-card:hover:before {
+    transform: rotate(45deg) translateY(50%);
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.option-card:hover .nav-btn h2 {
+    color: #ffffff;
+}
+
+.option-card:hover .nav-btn p {
+    color: #ffffff;
+}
+
+/* Button link styling */
+.nav-btn {
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    color: #0d47a1;
+}
+
+.nav-btn h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-btn p {
+    color: #666;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.option-card:hover .nav-btn {
+    color: #ffffff; /* Change to white text on hover */
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #999;
+    font-size: 0.9em;
+}
