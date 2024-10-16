@@ -1,6 +1,0 @@
-ERROR:root:Failed to process pdf5.pdf: 'WordListCorpusReader' object has no attribute '_LazyCorpusLoader__args'
-ERROR:root:Failed to process pdf14.pdf: 'WordListCorpusReader' object has no attribute '_LazyCorpusLoader__args'
-ERROR:root:Failed to process pdf12.pdf: 'WordListCorpusReader' object has no attribute '_LazyCorpusLoader__args'
-ERROR:root:Failed to process pdf5.pdf: 'WordListCorpusReader' object has no attribute '_LazyCorpusLoader__reader_cls'
-ERROR:root:Failed to process pdf14.pdf: 'WordListCorpusReader' object has no attribute '_LazyCorpusLoader__reader_cls'
-ERROR:root:Failed to process pdf5.pdf: 'WordListCorpusReader' object has no attribute '_LazyCorpusLoader__reader_cls'
